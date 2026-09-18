@@ -1,0 +1,347 @@
+/* ==========================================
+   1. RESET GENERAL Y ESTILOS BASE
+   ========================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e8d7f7;
+  color: #333333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ==========================================
+   2. ENCABEZADO SUPERIOR 
+   ========================================== */
+.encabezado {
+  background-color: #1a1a2e;
+  color: #ffffff;
+  position: relative;
+  padding: 15px 25px;
+  text-align: center;
+  width: 100%;
+}
+
+.logo-encabezado {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  max-height: 65px;
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 4px;
+}
+
+.encabezado-textos {
+  display: inline-block;
+}
+
+.encabezado h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.encabezado p {
+  font-size: 0.85rem;
+  color: #cccccc;
+}
+
+/* ==========================================
+   3. BARRA DE NAVEGACIÓN (Banner Morado)
+   ========================================== */
+.banner-menu {
+  background-color: #9b51e0;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky; 
+  top: 0;           
+  z-index: 1000;    
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+
+.navegacion {
+  width: auto;
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 2px;
+  display: none;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li {
+  margin: 0;
+}
+
+.nav-list a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  display: block;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.nav-list a:hover,
+.nav-list a.activo {
+  background-color: #39a900;
+  color: #ffffff;
+}
+
+/* ==========================================
+   4. CONTENEDOR PRINCIPAL
+   ========================================== */
+.contenido {
+  flex: 1;
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 0 15px;
+  display: block;
+}
+
+.caja {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.caja h2 {
+  color: #0d5c2a;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.caja p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  color: #444444;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   5. FORMULARIOS E INPUTS
+   ========================================== */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo-grupo label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #1a1a2e;
+}
+
+.campo-grupo input,
+.campo-grupo textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  font-family: inherit;
+}
+
+.campo-grupo input:focus,
+.campo-grupo textarea:focus {
+  border-color: #39a900;
+  box-shadow: 0 0 5px rgba(57, 169, 0, 0.3);
+}
+
+/* ==========================================
+   6. BOTONES
+   ========================================== */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #1a1a2e;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #39a900;
+  color: #ffffff;
+}
+
+/* ==========================================
+   7. TABLA DE CATÁLOGO
+   ========================================== */
+.tabla-contenedor {
+  overflow-x: auto;
+  margin-top: 15px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+}
+
+table th {
+  background-color: #1a1a2e;
+  color: #ffffff;
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 600;
+}
+
+table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333333;
+}
+
+table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.badge.disponible {
+  background-color: #e6f4ea;
+  color: #137333;
+}
+
+.badge.stock {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+}
+
+/* ==========================================
+   8. FOOTER Y DISEÑO RESPONSIVO (MÓVILES)
+   ========================================== */
+.pie {
+  background-color: #1a1a2e;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.85rem;
+  margin-top: auto;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .encabezado {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .logo-encabezado {
+    position: static;
+    transform: none;
+    max-height: 55px;
+  }
+
+  .banner-menu {
+    justify-content: flex-end;
+  }
+
+  .navegacion {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .hamburger-btn {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 5px;
+    gap: 6px;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+}

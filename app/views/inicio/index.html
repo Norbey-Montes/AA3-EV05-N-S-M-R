@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CompuClick — Tienda de Computadores en Línea</title>
+  <link rel="stylesheet" href="../../../public/css/estilos.css" />
+</head>
+<body>
+
+  <header class="encabezado">
+    <img src="../../../public/img/logo.jpeg" alt="Logo CompuClick" class="logo-encabezado" />
+    <div class="encabezado-textos">
+      <h1 id="titulo-dinamico">COMPUCLICK — TIENDA DE COMPUTADORES EN LÍNEA</h1>
+      <p>Norbey Steep Montes Ramirez — Ficha: 3230905</p>
+    </div>
+  </header>
+
+  <section class="banner-menu">
+    <nav class="navegacion">
+      <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+      <ul class="nav-list" id="navMenu">
+        <li><a href="#inicio" onclick="cambiarVista('inicio', event)" id="link-inicio" class="activo">🏠 Inicio</a></li>
+        <li><a href="../listado/index.html">📋 Catálogo</a></li>
+        <li><a href="#informacion" onclick="cambiarVista('informacion', event)" id="link-informacion">ℹ️ Información</a></li>
+        <li><a href="#contacto" onclick="cambiarVista('contacto', event)" id="link-contacto">📞 Contacto</a></li>
+        <li><a href="../login/index.html">🔑 Iniciar Sesión</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <main class="contenido">
+    <!-- SECCIÓN INICIO -->
+    <section class="caja seccion-vista" id="sec-inicio">
+      <h2>📖 Bienvenidos a CompuClick</h2>
+      <p>
+        <strong>COMPUCLICK</strong> es tu tienda virtual especializada en la venta exclusiva de computadores portátiles, equipos de escritorio y torres gamer de última generación con envíos rápidos y seguros.
+      </p>
+      <ul>
+        <li>☑ Venta 100% en línea de equipos de cómputo</li>
+        <li>☑ Variedad de marcas y gamas para estudio, hogar y gaming</li>
+        <li>☑ Garantía directa y pasarelas de pago seguras</li>
+      </ul>
+      <br>
+      <div style="text-align: center;">
+        <a href="../listado/index.html" class="btn" style="width: auto; padding: 10px 30px;">Explorar Catálogo de Equipos</a>
+      </div>
+    </section>
+
+    <section class="caja seccion-vista" id="sec-informacion" style="display: none;">
+      <h2>ℹ️ Información y Misión</h2>
+      <p>
+        <strong>Misión:</strong> Proveer a nuestros clientes la mejor tecnología en computadores a través de una plataforma en línea confiable, ágil y con entregas garantizadas en todo el territorio nacional.
+      </p>
+      <p>
+        <strong>Proyecto ADSO:</strong> Software web desarrollado para la comercialización directa de computadores, aplicando buenas prácticas de desarrollo de software en el SENA (Ficha 3230905).
+      </p>
+    </section>
+
+    <section class="caja seccion-vista" id="sec-contacto" style="display: none;">
+      <h2>📞 Contáctanos</h2>
+      <p>¿Tienes dudas sobre algún equipo de cómputo? Escríbenos y te atenderemos de inmediato:</p>
+
+      <form action="#" method="POST" class="formulario">
+        <div class="campo-grupo">
+          <label for="nombre">Nombre Completo:</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+        </div>
+
+        <div class="campo-grupo">
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required />
+        </div>
+
+        <div class="campo-grupo">
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿Qué equipo estás buscando?" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Enviar Mensaje</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>SENA ADSO · Proyecto CompuClick | Norbey Steep Montes Ramirez | Ficha: 3230905 | 2026</p>
+  </footer>
+
+  <script>
+    function cambiarVista(vista, event) {
+      if (event) event.preventDefault();
+
+      document.querySelectorAll('.seccion-vista').forEach(sec => {
+        sec.style.display = 'none';
+      });
+
+      const seccionActiva = document.getElementById('sec-' + vista);
+      if (seccionActiva) seccionActiva.style.display = 'block';
+
+      document.querySelectorAll('.nav-list a').forEach(a => a.classList.remove('activo'));
+      const activeLink = document.getElementById('link-' + vista);
+      if (activeLink) activeLink.classList.add('activo');
+
+      history.pushState(null, null, '#' + vista);
+      document.getElementById('navMenu').classList.remove('active');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash === 'informacion' || hash === 'contacto' || hash === 'inicio') {
+        cambiarVista(hash);
+      } else {
+        cambiarVista('inicio');
+      }
+    });
+
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      menu.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>

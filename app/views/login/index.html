@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CompuClick — Iniciar Sesión</title>
+  <link rel="stylesheet" href="../../../public/css/estilos.css" />
+</head>
+<body>
+
+  <header class="encabezado">
+    <img src="../../../public/img/logo.jpeg" alt="Logo CompuClick" class="logo-encabezado" />
+    <div class="encabezado-textos">
+      <h1>ACCESO A CLIENTES</h1>
+      <p>Norbey Steep Montes Ramirez — Ficha: 3230905</p>
+    </div>
+  </header>
+
+  <section class="banner-menu">
+    <nav class="navegacion">
+      <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+      <ul class="nav-list" id="navMenu">
+        <li><a href="../inicio/index.html#inicio">🏠 Inicio</a></li>
+        <li><a href="../listado/index.html">📋 Catálogo</a></li>
+        <li><a href="../inicio/index.html#informacion">ℹ️ Información</a></li>
+        <li><a href="../inicio/index.html#contacto">📞 Contacto</a></li>
+        <li><a href="index.html" class="activo">🔑 Iniciar Sesión</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <main class="contenido">
+    <section class="caja">
+      <h2>Iniciar Sesión en CompuClick</h2>
+      <p>Ingresa tus credenciales para administrar tus pedidos de computadores:</p>
+
+      <form action="#" method="POST" class="formulario">
+        <div class="campo-grupo">
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required />
+        </div>
+
+        <div class="campo-grupo">
+          <label for="password">Contraseña:</label>
+          <input type="password" id="password" name="password" placeholder="********" required />
+        </div>
+
+        <!-- Cumple con: "Opción de recuperación de contraseña" -->
+        <div style="text-align: right; margin-top: -5px;">
+            <a href="#" style="font-size: 0.85rem; color: #1a1a2e; text-decoration: none; font-weight: bold;">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <button type="submit" class="btn">Entrar a mi Cuenta</button>
+      </form>
+      
+      <div style="text-align: center; margin-top: 20px;">
+          <a href="../inicio/index.html" style="color: #9b51e0; text-decoration: none; font-weight: bold;">← Regresar al inicio</a>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>SENA ADSO · Proyecto CompuClick | Norbey Steep Montes Ramirez | Ficha: 3230905 | 2026</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      menu.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>

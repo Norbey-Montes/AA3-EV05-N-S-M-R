@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CompuClick — Catálogo de Computadores</title>
+  <link rel="stylesheet" href="../../../public/css/estilos.css" />
+</head>
+<body>
+
+  <header class="encabezado">
+    <img src="../../../public/img/logo.jpeg" alt="Logo CompuClick" class="logo-encabezado" />
+    <div class="encabezado-textos">
+      <h1>COMPUCLICK — CATÁLOGO EN LÍNEA</h1>
+      <p>Norbey Steep Montes Ramirez — Ficha: 3230905</p>
+    </div>
+  </header>
+
+  <section class="banner-menu">
+    <nav class="navegacion">
+      <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+      <ul class="nav-list" id="navMenu">
+        <li><a href="../inicio/index.html#inicio">🏠 Inicio</a></li>
+        <li><a href="index.html" class="activo">📋 Catálogo</a></li>
+        <li><a href="../inicio/index.html#informacion">ℹ️ Información</a></li>
+        <li><a href="../inicio/index.html#contacto">📞 Contacto</a></li>
+        <li><a href="../login/index.html">🔑 Iniciar Sesión</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <main class="contenido">
+    <section class="caja">
+      <h2>📋 Computadores Disponibles para Compra</h2>
+      <p>Selecciona tu equipo y cómpralo en línea de forma inmediata:</p>
+
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Computador / Modelo</th>
+              <th>Categoría</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>CC-101</strong></td>
+              <td>Portátil ASUS TUF Gaming F15 Core i7 16GB</td>
+              <td>Portátiles Gamer</td>
+              <td><span class="badge disponible">Disponible</span></td>
+            </tr>
+            <tr>
+              <td><strong>CC-102</strong></td>
+              <td>Computador de Escritorio HP Slim Core i5 8GB</td>
+              <td>Equipos de Escritorio</td>
+              <td><span class="badge stock">En Stock</span></td>
+            </tr>
+            <tr>
+              <td><strong>CC-103</strong></td>
+              <td>PC Gamer Ryzen 7 5700X RTX 4060 32GB</td>
+              <td>Torres Gamer</td>
+              <td><span class="badge disponible">Disponible</span></td>
+            </tr>
+            <tr>
+              <td><strong>CC-104</strong></td>
+              <td>Portátil Lenovo IdeaPad Slim 3 Ryzen 5 16GB</td>
+              <td>Portátiles Ultraslim</td>
+              <td><span class="badge disponible">Disponible</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>SENA ADSO · Proyecto CompuClick | Norbey Steep Montes Ramirez | Ficha: 3230905 | 2026</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      menu.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
