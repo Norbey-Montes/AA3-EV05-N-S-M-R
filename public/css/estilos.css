@@ -44,6 +44,17 @@ body {
   border-radius: 8px;
   background-color: #ffffff;
   padding: 4px;
+  cursor: pointer;
+  /* Transición suave para el cambio de tamaño */
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+  z-index: 10;
+}
+
+/* EFECTO HOVER DEL LOGO */
+.logo-encabezado:hover {
+  /* Mantiene el translateY(-50%) para no descentrarlo verticalmente */
+  transform: translateY(-50%) scale(1.25);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
 }
 
 .encabezado-textos {
@@ -312,6 +323,11 @@ table tr:nth-child(even) {
     position: static;
     transform: none;
     max-height: 55px;
+  }
+
+  /* Hover adaptado para pantallas móviles */
+  .logo-encabezado:hover {
+    transform: scale(1.2);
   }
 
   .banner-menu {
